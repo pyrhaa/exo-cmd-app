@@ -1,18 +1,18 @@
 const chalk = require('chalk');
 const readlineSync = require('readline-sync');
 
-const majority = 
+const majorityAsk = readlineSync.question("Majorité d'âge de votre pays: ");
 const userName = readlineSync.question('Puis-je avoir votre nom de famille? ');
-
 const userPren = readlineSync.question(
   'Puis-je avoir votre prenom de famille? '
 );
-
 const ageStr = readlineSync.question('Puis-je avoir votre age? ');
 
 const age = Number(ageStr);
 
-if (age >= 18) {
+const majority = Number(majorityAsk);
+
+if (age >= majority) {
   console.log(
     chalk.green(`${userName} ${userPren}, vous êtes majeur, vous pouvez voter`)
   );
